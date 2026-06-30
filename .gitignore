@@ -1,0 +1,37 @@
+# ── Python / backend ────────────────────────────────────────
+back/venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Secrets — NEVER commit
+.env
+back/.env
+*.env.local
+
+# Vector stores (rebuilt at runtime)
+chroma_interview/
+chroma_optimized_chunks/
+back/chroma_interview/
+back/chroma_optimized_chunks/
+
+# ── Node / frontend ─────────────────────────────────────────
+node_modules/
+Front/graduation-project--front/node_modules/
+Front/graduation-project--front/dist/
+dist/
+*.local
+
+# ── Editor / OS ─────────────────────────────────────────────
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# ── Documentation drafts — NOT part of the deployed app ─────
+docs/
+deployment-guide.html
+*.docx
+back/Roadmap_Agents8_final_v.ipynb
