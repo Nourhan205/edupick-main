@@ -1,0 +1,103 @@
+/* ═══════════════════════════════════════════════════════════
+   PreviousResults.css — EduPick Midnight (rides on ep-* from MainTest.css)
+   All classes prefixed pr-.
+   ═══════════════════════════════════════════════════════════ */
+
+.pr-empty-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 48px 40px;
+}
+.pr-empty-icon { font-size: 2.6rem; }
+.pr-empty-card h3 { font-size: 1.3rem; color: var(--text-primary); }
+.pr-empty-card p { color: var(--text-secondary); line-height: 1.6; max-width: 340px; }
+.pr-spinner { margin-bottom: 6px; }
+
+.pr-main { flex: 1; padding: 40px 20px; }
+.pr-container { max-width: 760px; margin: 0 auto; }
+
+.pr-page-title { margin-bottom: 24px; }
+.pr-page-title h2 { font-size: 1.7rem; color: var(--text-primary); }
+.pr-page-title p { color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; }
+
+/* Filters */
+.pr-filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.pr-filter {
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-secondary); border-radius: 999px; padding: 6px 14px;
+  font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.18s;
+}
+.pr-filter:hover { border-color: var(--ep-sky); color: var(--text-primary); }
+.pr-filter.active { background: var(--ep-grad); border-color: transparent; color: #fff; }
+
+/* source tag */
+.pr-tag { display: inline-block; font-size: 0.66rem; font-weight: 700; padding: 2px 7px; border-radius: 999px; margin-right: 6px; }
+.pr-tag--rm { background: rgba(47,111,237,0.18); color: var(--ep-glow); }
+.pr-tag--tp { background: rgba(52,211,153,0.16); color: #6ee7b7; }
+.pr-card-header--static { cursor: default; }
+.pr-card-fraction { font-size: 0.74rem; color: var(--text-muted); min-width: 40px; text-align: right; }
+
+.pr-list { display: flex; flex-direction: column; gap: 12px; }
+
+.pr-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  animation: ep-fade-up 0.4s var(--ep-ease) both;
+}
+.pr-card:hover { border-color: var(--ep-border-2); }
+.pr-card--open { border-color: var(--ep-border-2); box-shadow: var(--ep-glow-sky); }
+
+.pr-card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.pr-card-left { display: flex; align-items: center; gap: 14px; }
+.pr-card-emoji { font-size: 1.8rem; }
+.pr-card-track { display: block; font-family: var(--ep-font-display); font-weight: 700; font-size: 1.05rem; color: var(--text-primary); text-align: left; }
+.pr-card-date { display: block; font-size: 0.78rem; color: var(--text-muted); text-align: left; }
+.pr-top-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.pr-top-chip {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: rgba(47,111,237,0.12);
+  border: 1px solid var(--ep-border);
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+
+.pr-card-right { display: flex; align-items: center; gap: 12px; }
+.pr-mini-bar-wrap { width: 90px; height: 6px; background: var(--ep-track); border-radius: 999px; overflow: hidden; }
+.pr-mini-bar { height: 100%; background: var(--ep-grad); border-radius: 999px; }
+.pr-card-pct { font-weight: 700; color: var(--ep-glow); font-size: 0.95rem; min-width: 40px; text-align: right; }
+.pr-chevron { color: var(--text-muted); font-size: 0.7rem; }
+
+.pr-card-body {
+  padding: 4px 20px 20px;
+  border-top: 1px solid var(--border);
+  animation: ep-fade-in 0.3s ease both;
+}
+.pr-insight {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  border-left: 2px solid var(--accent);
+  padding-left: 14px;
+  margin: 16px 0;
+}
+.pr-scores { margin-bottom: 20px; }
+.pr-roadmap-btn { width: 100%; }
+
+.pr-footer { margin-top: 28px; text-align: center; }

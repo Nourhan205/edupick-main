@@ -1,0 +1,136 @@
+/* common.css — shared auth styling (EduPick Midnight dark glass) */
+
+.auth-card {
+  position: relative;
+  background: var(--ep-glass-2);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  padding: 44px 42px;
+  border-radius: var(--ep-radius-xl);
+  border: 1px solid var(--ep-border);
+  box-shadow: var(--ep-shadow);
+  width: 100%;
+  max-width: 460px;
+  text-align: left;
+  animation: ep-fade-up 0.6s var(--ep-ease) both;
+}
+
+/* top accent line */
+.auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 28px; right: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ep-sky), transparent);
+  opacity: 0.7;
+}
+
+.auth-logo {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px auto;
+  border-radius: 18px;
+  object-fit: contain;
+  background: rgba(47, 111, 237, 0.12);
+  border: 1px solid var(--ep-border-2);
+  padding: 8px;
+  box-shadow: var(--ep-glow-primary);
+}
+
+.auth-card h2 {
+  text-align: center;
+  font-family: var(--ep-font-display);
+  color: var(--ep-text);
+  margin-bottom: 12px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.auth-card p {
+  text-align: center;
+  color: var(--ep-text-mid);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+.auth-card p strong { color: var(--ep-sky); }
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--ep-text-mid);
+  font-size: 14px;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 4px;
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius-sm);
+  font-family: var(--ep-font-body);
+  font-size: 15px;
+  color: var(--ep-text);
+  background: var(--ep-input-bg);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+.form-input::placeholder { color: var(--ep-text-dim); }
+.form-input:focus {
+  outline: none;
+  border-color: var(--ep-primary);
+  background: var(--ep-input-bg);
+  box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.18);
+}
+
+.btn-primary {
+  width: 100%;
+  background: var(--ep-grad);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  margin-top: 26px;
+  border-radius: var(--ep-radius-sm);
+  cursor: pointer;
+  font-family: var(--ep-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.25s var(--ep-ease), box-shadow 0.25s var(--ep-ease);
+  box-shadow: var(--ep-glow-primary);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 48px rgba(47,111,237,0.55); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+.btn-primary:active { transform: translateY(0); }
+
+.message {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--ep-sky);
+  font-size: 14px;
+  background: rgba(47, 111, 237, 0.1);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius-sm);
+  padding: 10px 14px;
+}
+
+.auth-links { text-align: center; margin-top: 26px; }
+.auth-link {
+  color: var(--ep-sky);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+  margin: 0 8px;
+  transition: color 0.2s;
+}
+.auth-link:hover { color: var(--ep-glow); text-decoration: underline; }
+.auth-links p { margin-top: 16px; color: var(--ep-text-mid); font-size: 14px; margin-bottom: 0; }
+
+/* Responsive */
+@media (max-width: 520px) {
+  .auth-card { padding: 36px 26px; margin: 0 14px; border-radius: var(--ep-radius-lg); }
+  .auth-card h2 { font-size: 23px; }
+  .auth-logo { width: 64px; height: 64px; }
+}

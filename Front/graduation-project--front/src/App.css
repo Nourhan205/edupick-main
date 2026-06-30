@@ -1,0 +1,6 @@
+/* App.css — layout-only helpers. Visual theme lives in styles/theme.css */
+
+.container {
+  width: min(92%, 1200px);
+  margin: 40px auto;
+}

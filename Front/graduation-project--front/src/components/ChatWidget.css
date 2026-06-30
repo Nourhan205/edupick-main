@@ -1,0 +1,121 @@
+/* Floating AI assistant widget — EduPick Midnight */
+
+.cw-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1200;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  border: none;
+  background: var(--ep-grad);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: var(--ep-glow-primary), 0 8px 24px rgba(0,0,0,0.4);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.25s var(--ep-spring), box-shadow 0.25s;
+  animation: ep-pulse-glow 3s ease-in-out infinite;
+}
+.cw-fab:hover { transform: translateY(-3px) scale(1.05); }
+.cw-fab--open { animation: none; background: var(--ep-panel); border: 1px solid var(--ep-border-2); }
+
+.cw-panel {
+  position: fixed;
+  bottom: 94px;
+  right: 24px;
+  z-index: 1200;
+  width: min(380px, calc(100vw - 32px));
+  height: min(560px, calc(100vh - 130px));
+  display: flex;
+  flex-direction: column;
+  background: var(--ep-panel);
+  border: 1px solid var(--ep-border-2);
+  border-radius: var(--ep-radius-lg);
+  box-shadow: var(--ep-shadow);
+  overflow: hidden;
+  animation: cw-pop 0.28s var(--ep-spring) both;
+}
+@keyframes cw-pop {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cw-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--ep-sunken);
+  border-bottom: 1px solid var(--ep-border);
+}
+.cw-head-brand { display: flex; align-items: center; gap: 10px; }
+.cw-head-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(47,111,237,0.2); border: 1px solid var(--ep-border-2);
+  color: var(--ep-sky);
+}
+.cw-head-brand strong { display: block; font-family: var(--ep-font-display); font-size: 0.95rem; color: var(--ep-text); }
+.cw-head-brand span { font-size: 0.72rem; color: var(--ep-text-dim); }
+.cw-head-actions { display: flex; gap: 4px; }
+.cw-head-actions button {
+  background: none; border: none; color: var(--ep-text-dim);
+  cursor: pointer; padding: 6px; border-radius: 8px; font-size: 0.9rem;
+  transition: color 0.2s, background 0.2s;
+}
+.cw-head-actions button:hover { color: var(--ep-text); background: var(--ep-glass-2); }
+
+.cw-messages {
+  flex: 1; overflow-y: auto;
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.cw-msg { display: flex; gap: 8px; max-width: 100%; }
+.cw-msg.cw-user { flex-direction: row-reverse; }
+.cw-avatar {
+  width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(47,111,237,0.18); border: 1px solid var(--ep-border-2);
+  color: var(--ep-sky); font-size: 0.8rem;
+}
+.cw-bubble {
+  background: var(--ep-glass-2); border: 1px solid var(--ep-border);
+  border-radius: 14px; padding: 10px 13px;
+  font-size: 0.88rem; line-height: 1.55; color: var(--ep-text);
+  max-width: 80%;
+}
+.cw-user .cw-bubble { background: var(--ep-grad); border-color: transparent; color: #fff; }
+
+.cw-typing { display: inline-flex; gap: 4px; }
+.cw-typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--ep-sky); animation: cb-bounce 1.2s infinite ease-in-out; }
+.cw-typing span:nth-child(2) { animation-delay: 0.18s; }
+.cw-typing span:nth-child(3) { animation-delay: 0.36s; }
+
+.cw-input {
+  display: flex; gap: 8px; align-items: center;
+  padding: 12px;
+  border-top: 1px solid var(--ep-border);
+  background: var(--ep-sunken);
+}
+.cw-input input {
+  flex: 1;
+  background: var(--ep-input-bg);
+  border: 1px solid var(--ep-border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  color: var(--ep-text);
+  font-family: var(--ep-font-body);
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.cw-input input:focus { border-color: var(--ep-primary); }
+.cw-input input::placeholder { color: var(--ep-text-dim); }
+.cw-input button {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border: none; border-radius: 11px;
+  background: var(--ep-grad); color: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s var(--ep-ease);
+}
+.cw-input button:hover:not(:disabled) { transform: translateY(-2px); }
+.cw-input button:disabled { opacity: 0.4; cursor: not-allowed; }

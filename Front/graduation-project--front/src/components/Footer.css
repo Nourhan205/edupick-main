@@ -1,0 +1,114 @@
+/* Footer / how-it-works — EduPick Midnight */
+
+.ft {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--ep-border);
+  background: var(--ep-sunken);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-top: 40px;
+}
+.ft-inner { max-width: 1200px; margin: 0 auto; padding: 64px 24px 32px; }
+
+.ft-head { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+.ft-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ep-sky);
+  background: rgba(47,111,237,0.12);
+  border: 1px solid var(--ep-border-2);
+  border-radius: 999px; padding: 5px 14px; margin-bottom: 16px;
+}
+.ft-head h2 { font-size: 2rem; margin-bottom: 12px; }
+.ft-grad { background: var(--ep-grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.ft-head p { color: var(--ep-text-mid); font-size: 1rem; line-height: 1.6; }
+
+.ft-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.ft-step {
+  background: var(--ep-glass-2);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius-lg);
+  padding: 24px;
+  transition: transform 0.3s var(--ep-ease), border-color 0.3s, box-shadow 0.3s;
+}
+.ft-step:hover { transform: translateY(-5px); border-color: var(--ep-border-2); box-shadow: var(--ep-glow-sky); }
+
+/* "image" media block — gradient panel with the step icon */
+.ft-step-media {
+  position: relative;
+  height: 120px;
+  border-radius: var(--ep-radius);
+  margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(93,168,245,0.25), transparent 60%),
+    linear-gradient(135deg, rgba(47,111,237,0.22), var(--ep-glass));
+  border: 1px solid var(--ep-border-2);
+  overflow: hidden;
+}
+.ft-step-num {
+  position: absolute; top: 12px; left: 14px;
+  font-family: var(--ep-font-display);
+  font-size: 1.6rem; font-weight: 800;
+  color: rgba(125,192,255,0.35);
+}
+.ft-step-icon { font-size: 2.4rem; color: var(--ep-glow); filter: drop-shadow(0 4px 14px rgba(47,111,237,0.5)); }
+.ft-step h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.ft-step p { font-size: 0.88rem; color: var(--ep-text-mid); line-height: 1.6; }
+
+/* CTA band */
+.ft-cta {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(47,111,237,0.18), rgba(93,168,245,0.08));
+  border: 1px solid var(--ep-border-2);
+  border-radius: var(--ep-radius-xl);
+  padding: 28px 32px;
+  margin-bottom: 40px;
+}
+.ft-cta-icon { font-size: 2.2rem; color: var(--ep-sky); flex-shrink: 0; }
+.ft-cta h3 { font-size: 1.3rem; margin-bottom: 4px; }
+.ft-cta p { color: var(--ep-text-mid); font-size: 0.92rem; }
+.ft-cta div { flex: 1; min-width: 200px; }
+.ft-cta-btn {
+  background: var(--ep-grad); color: #fff; border: none;
+  border-radius: var(--ep-radius-sm); padding: 13px 26px;
+  font-family: var(--ep-font-body); font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  box-shadow: var(--ep-glow-primary);
+  transition: transform 0.25s var(--ep-ease), box-shadow 0.25s var(--ep-ease);
+  white-space: nowrap;
+}
+.ft-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 48px rgba(47,111,237,0.55); }
+
+/* Bottom bar */
+.ft-bottom {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--ep-border);
+}
+.ft-brand { display: flex; align-items: center; gap: 10px; }
+.ft-brand img { height: 40px; width: auto; object-fit: contain; }
+.ft-brand span {
+  font-family: var(--ep-font-display); font-weight: 800; font-size: 1.1rem;
+  background: var(--ep-grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.ft-links { display: flex; gap: 18px; }
+.ft-links button {
+  background: none; border: none; cursor: pointer;
+  color: var(--ep-text-mid); font-size: 0.85rem; font-weight: 500; padding: 0;
+  transition: color 0.2s;
+}
+.ft-links button:hover { color: var(--ep-glow); }
+.ft-copy { color: var(--ep-text-dim); font-size: 0.82rem; }
+
+@media (max-width: 900px) { .ft-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .ft-steps { grid-template-columns: 1fr; }
+  .ft-cta { flex-direction: column; text-align: center; }
+  .ft-head h2 { font-size: 1.6rem; }
+}

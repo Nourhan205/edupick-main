@@ -1,0 +1,91 @@
+/* auth.css — auth page layout (EduPick Midnight) */
+
+.login-page,
+.signup-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Ambient glow behind the card */
+.login-page::before,
+.signup-page::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(47, 111, 237, 0.28), transparent 65%);
+  filter: blur(60px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.login-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+  text-align: center;
+  animation: ep-fade-up 0.5s var(--ep-ease) both;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-name {
+  font-family: var(--ep-font-display);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  background: var(--ep-grad-text);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.login-page .auth-card,
+.signup-page .auth-card { position: relative; z-index: 1; }
+
+.form-group { margin-bottom: 18px; }
+.password-group { margin-top: 4px; }
+
+/* Signup choice chips (student/graduate, study level) */
+.su-choice-row { display: flex; gap: 10px; }
+.su-choice {
+  flex: 1;
+  padding: 12px;
+  background: var(--ep-input-bg);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius-sm);
+  color: var(--ep-text-mid);
+  font-family: var(--ep-font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s var(--ep-ease);
+}
+.su-choice:hover { border-color: var(--ep-sky); color: var(--ep-text); }
+.su-choice.active {
+  background: rgba(47, 111, 237, 0.16);
+  border-color: var(--ep-primary);
+  color: var(--ep-glow);
+  box-shadow: inset 0 0 18px rgba(47, 111, 237, 0.12);
+}
+
+@media (max-width: 520px) {
+  .site-name { font-size: 28px; }
+}

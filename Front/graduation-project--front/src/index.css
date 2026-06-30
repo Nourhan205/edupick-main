@@ -1,0 +1,26 @@
+/* index.css — minimal global resets.
+   The full look lives in styles/theme.css (EduPick Midnight). */
+
+:root {
+  /* Legacy aliases kept so older page CSS still resolves to brand blues */
+  --primary-color:    #2F6FED;
+  --secondary-color:  #1E54C8;
+  --background-color: #060D1C;
+  --text-color:       #EAF1FF;
+  --white:            #ffffff;
+  --main-blue:        #2F6FED;
+  --hover-blue:       #1E54C8;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Neutral button reset — page/theme classes own real button styling */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img { max-width: 100%; }

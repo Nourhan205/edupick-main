@@ -1,0 +1,156 @@
+/* Navbar — EduPick Midnight dark glass chrome */
+
+.nb-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ep-nav-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-bottom: 1px solid var(--ep-border);
+}
+
+.nb-brand {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s var(--ep-ease);
+}
+.nb-brand:hover { transform: translateY(-1px); }
+
+.nb-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(47, 111, 237, 0.45));
+}
+/* Soft glow so the logo stands out on dark backgrounds */
+:root[data-theme="dark"] .nb-logo {
+  filter: drop-shadow(0 0 9px rgba(93, 168, 245, 0.7)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+}
+
+.nb-site-name {
+  font-family: var(--ep-font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  background: var(--ep-grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nb-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: .2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.nb-link {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem .85rem;
+  border: 1px solid transparent;
+  background: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: var(--ep-font-body);
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--ep-text-mid);
+  transition: background .2s var(--ep-ease), color .2s ease, border-color .2s ease, transform .2s var(--ep-ease);
+  white-space: nowrap;
+}
+
+.nb-link:hover {
+  background: var(--ep-glass-2);
+  color: var(--ep-text);
+  transform: translateY(-1px);
+}
+
+.nb-link--active {
+  background: rgba(47, 111, 237, 0.16);
+  border-color: var(--ep-border-2);
+  color: var(--ep-primary);
+  font-weight: 600;
+  box-shadow: inset 0 0 16px rgba(47, 111, 237, 0.12);
+}
+:root[data-theme="dark"] .nb-link--active { color: var(--ep-glow); }
+
+.nb-icon { font-size: 1rem; display: inline-flex; align-items: center; }
+.nb-link { display: inline-flex; align-items: center; }
+.nb-user-icon { opacity: 0.8; }
+.nb-logout { display: inline-flex; align-items: center; gap: 6px; }
+
+.nb-right {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-shrink: 0;
+}
+
+.nb-user {
+  font-size: .85rem;
+  color: var(--ep-text-mid);
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: .4rem .75rem;
+  background: var(--ep-glass-2);
+  border: 1px solid var(--ep-border);
+  border-radius: 999px;
+}
+
+.nb-logout {
+  padding: .45rem 1rem;
+  background: var(--ep-danger-bg);
+  color: var(--ep-danger);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  border-radius: 10px;
+  font-family: var(--ep-font-body);
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s var(--ep-ease);
+}
+
+.nb-logout:hover { background: rgba(251, 113, 133, 0.22); transform: translateY(-1px); }
+
+/* Mobile */
+@media (max-width: 980px) {
+  .nb-nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: .55rem 1rem;
+    gap: .5rem;
+  }
+  .nb-links {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: .25rem;
+    scrollbar-width: none;
+  }
+  .nb-links::-webkit-scrollbar { display: none; }
+  .nb-label { display: none; }
+  .nb-icon { font-size: 1.3rem; }
+  .nb-link { padding: .45rem .55rem; }
+  .nb-user { display: none; }
+  .nb-logout-label { display: none; }
+  .nb-logout { padding: .45rem .6rem; }
+  .nb-right { gap: .5rem; }
+}

@@ -1,0 +1,361 @@
+/* ============================================================
+   EduPick — "Midnight" Design System
+   Dark glass SaaS theme derived from the EduPick logo blues.
+   Imported once (main.jsx) — every page inherits these tokens.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+  /* Backgrounds (deep navy gradient stack) */
+  --ep-bg:        #060D1C;
+  --ep-bg-2:      #0A1730;
+  --ep-panel:     #0E1E3A;
+
+  /* Glass surfaces */
+  --ep-glass:     rgba(20, 44, 84, 0.40);
+  --ep-glass-2:   rgba(255, 255, 255, 0.035);
+  --ep-glass-3:   rgba(255, 255, 255, 0.06);
+  --ep-border:    rgba(120, 170, 240, 0.14);
+  --ep-border-2:  rgba(120, 170, 240, 0.26);
+
+  /* Semantic surfaces (themeable) */
+  --ep-input-bg:  rgba(8, 18, 38, 0.60);
+  --ep-sunken:    rgba(8, 18, 38, 0.50);
+  --ep-nav-bg:    rgba(8, 18, 38, 0.72);
+  --ep-track:     rgba(255, 255, 255, 0.08);
+  --ep-stripe:    rgba(255, 255, 255, 0.025);
+  --ep-code-bg:   #05101f;
+
+  /* Ambient orb colors (themeable) */
+  --ep-orb-1:     rgba(47, 111, 237, 0.22);
+  --ep-orb-2:     rgba(93, 168, 245, 0.16);
+  --ep-orb-3:     rgba(30, 84, 200, 0.18);
+
+  /* Brand blues (from logo) */
+  --ep-navy:      #16365F;
+  --ep-primary:   #2F6FED;
+  --ep-primary-2: #1E54C8;
+  --ep-sky:       #5DA8F5;
+  --ep-glow:      #7DC0FF;
+
+  /* Text */
+  --ep-text:      #EAF1FF;
+  --ep-text-mid:  #A7BCDE;
+  --ep-text-dim:  #6B82A8;
+
+  /* Status */
+  --ep-success:   #34D399;
+  --ep-success-bg: rgba(52, 211, 153, 0.12);
+  --ep-warn:      #FBBF24;
+  --ep-warn-bg:   rgba(251, 191, 36, 0.12);
+  --ep-danger:    #FB7185;
+  --ep-danger-bg: rgba(251, 113, 133, 0.12);
+
+  /* Gradients */
+  --ep-grad:      linear-gradient(135deg, #2F6FED 0%, #5DA8F5 100%);
+  --ep-grad-deep: linear-gradient(135deg, #1E54C8 0%, #2F6FED 55%, #5DA8F5 100%);
+  --ep-grad-text: linear-gradient(120deg, #7DC0FF 0%, #5DA8F5 40%, #2F6FED 100%);
+
+  /* Shape */
+  --ep-radius-xl: 24px;
+  --ep-radius-lg: 18px;
+  --ep-radius:    14px;
+  --ep-radius-sm: 10px;
+
+  /* Shadow / glow */
+  --ep-shadow:      0 18px 50px rgba(0, 0, 0, 0.45);
+  --ep-shadow-sm:   0 8px 24px rgba(0, 0, 0, 0.35);
+  --ep-glow-primary: 0 10px 40px rgba(47, 111, 237, 0.40);
+  --ep-glow-sky:     0 8px 36px rgba(93, 168, 245, 0.35);
+
+  /* Motion */
+  --ep-ease:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ep-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Fonts */
+  --ep-font-display: 'Sora', 'Segoe UI', sans-serif;
+  --ep-font-body:    'Inter', 'Segoe UI', sans-serif;
+
+  color-scheme: dark;
+}
+
+/* ─── Light theme overrides ─────────────────────────────────── */
+:root[data-theme="light"] {
+  --ep-bg:        #eef3fb;
+  --ep-bg-2:      #e3ecf8;
+  --ep-panel:     #ffffff;
+
+  --ep-glass:     rgba(255, 255, 255, 0.70);
+  --ep-glass-2:   rgba(255, 255, 255, 0.72);
+  --ep-glass-3:   rgba(255, 255, 255, 0.92);
+  --ep-border:    rgba(30, 64, 124, 0.14);
+  --ep-border-2:  rgba(30, 64, 124, 0.28);
+
+  --ep-text:      #0f1f3d;
+  --ep-text-mid:  #41577d;
+  --ep-text-dim:  #76889f;
+
+  --ep-input-bg:  #ffffff;
+  --ep-sunken:    rgba(255, 255, 255, 0.75);
+  --ep-nav-bg:    rgba(255, 255, 255, 0.82);
+  --ep-track:     rgba(15, 31, 61, 0.10);
+  --ep-stripe:    rgba(15, 31, 61, 0.025);
+  /* code blocks stay dark (their syntax colors are light) */
+
+  --ep-success-bg: rgba(22, 163, 74, 0.12);
+  --ep-warn-bg:    rgba(202, 138, 4, 0.14);
+  --ep-danger-bg:  rgba(220, 38, 38, 0.10);
+
+  --ep-shadow:      0 18px 50px rgba(30, 64, 124, 0.15);
+  --ep-shadow-sm:   0 8px 24px rgba(30, 64, 124, 0.10);
+  --ep-glow-primary: 0 10px 34px rgba(47, 111, 237, 0.28);
+  --ep-glow-sky:     0 8px 28px rgba(93, 168, 245, 0.26);
+
+  --ep-orb-1:     rgba(47, 111, 237, 0.14);
+  --ep-orb-2:     rgba(93, 168, 245, 0.12);
+  --ep-orb-3:     rgba(120, 170, 240, 0.12);
+
+  color-scheme: light;
+}
+
+/* ─── Reset / base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; max-width: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--ep-font-body);
+  font-weight: 400;
+  color: var(--ep-text);
+  background: var(--ep-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Ambient blue orbs — the signature atmosphere */
+  background-image:
+    radial-gradient(ellipse 70% 55% at 12% -5%, var(--ep-orb-1) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 95% 0%, var(--ep-orb-2) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 50% 110%, var(--ep-orb-3) 0%, transparent 60%);
+  background-attachment: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--ep-font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ep-text);
+  margin: 0;
+}
+
+a { color: var(--ep-sky); text-decoration: none; }
+a:hover { color: var(--ep-glow); }
+
+/* ─── Custom scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(93, 168, 245, 0.22);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(93, 168, 245, 0.40); background-clip: padding-box; }
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection { background: rgba(47, 111, 237, 0.4); color: #fff; }
+
+/* ─── Reusable utility classes ──────────────────────────────── */
+
+/* Glass card */
+.ep-glass {
+  background: var(--ep-glass-2);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius-lg);
+  box-shadow: var(--ep-shadow);
+}
+
+.ep-glass-soft {
+  background: var(--ep-glass-2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius);
+}
+
+/* Gradient text */
+.ep-grad-text {
+  background: var(--ep-grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Buttons */
+.ep-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--ep-font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--ep-radius-sm);
+  cursor: pointer;
+  transition: transform 0.2s var(--ep-ease), box-shadow 0.25s var(--ep-ease), background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+}
+.ep-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+
+.ep-btn-primary {
+  background: var(--ep-grad);
+  color: #fff;
+  box-shadow: var(--ep-glow-primary);
+}
+.ep-btn-primary:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 48px rgba(47, 111, 237, 0.55);
+}
+
+.ep-btn-ghost {
+  background: var(--ep-glass-2);
+  color: var(--ep-text);
+  border: 1px solid var(--ep-border-2);
+  backdrop-filter: blur(10px);
+}
+.ep-btn-ghost:not(:disabled):hover {
+  border-color: var(--ep-sky);
+  background: var(--ep-glass-3);
+  transform: translateY(-2px);
+}
+
+.ep-btn-danger {
+  background: var(--ep-danger-bg);
+  color: var(--ep-danger);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+}
+.ep-btn-danger:not(:disabled):hover { background: rgba(251, 113, 133, 0.2); }
+
+/* Inputs */
+.ep-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--ep-font-body);
+  font-size: 0.95rem;
+  color: var(--ep-text);
+  background: var(--ep-input-bg);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius-sm);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.ep-input::placeholder { color: var(--ep-text-dim); }
+.ep-input:focus {
+  border-color: var(--ep-primary);
+  background: var(--ep-input-bg);
+  box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.18);
+}
+
+/* ─── Keyframe animations ───────────────────────────────────── */
+@keyframes ep-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ep-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes ep-scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes ep-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes ep-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(93, 168, 245, 0.45); }
+  50%      { box-shadow: 0 0 0 14px rgba(93, 168, 245, 0); }
+}
+@keyframes ep-spin { to { transform: rotate(360deg); } }
+@keyframes ep-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes ep-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -20px) scale(1.05); }
+  66%      { transform: translate(-20px, 20px) scale(0.97); }
+}
+
+/* Animation helpers */
+.ep-anim-up   { animation: ep-fade-up 0.6s var(--ep-ease) both; }
+.ep-anim-in   { animation: ep-fade-in 0.6s ease both; }
+.ep-anim-scale{ animation: ep-scale-in 0.5s var(--ep-spring) both; }
+.ep-d1 { animation-delay: 0.08s; }
+.ep-d2 { animation-delay: 0.16s; }
+.ep-d3 { animation-delay: 0.24s; }
+.ep-d4 { animation-delay: 0.32s; }
+.ep-d5 { animation-delay: 0.40s; }
+
+/* Spinner */
+.ep-spinner {
+  width: 40px; height: 40px;
+  border: 3px solid rgba(93, 168, 245, 0.2);
+  border-top-color: var(--ep-sky);
+  border-radius: 50%;
+  animation: ep-spin 0.8s linear infinite;
+}
+
+/* Ambient floating orbs (optional decorative layer per page) */
+.ep-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Light overrides for pages with their own scoped tokens ─── */
+:root[data-theme="light"] .ep-page {
+  --bg:             #eef3fb;
+  --surface:        rgba(255, 255, 255, 0.85);
+  --border:         rgba(30, 64, 124, 0.16);
+  --accent:         #2F6FED;
+  --accent-dim:     rgba(47, 111, 237, 0.12);
+  --accent-glow:    rgba(47, 111, 237, 0.25);
+  --text-primary:   #0f1f3d;
+  --text-secondary: #41577d;
+  --text-muted:     #76889f;
+}
+
+:root[data-theme="light"] .tt-page {
+  --primary-light: rgba(47, 111, 237, 0.12);
+  --surface:       rgba(255, 255, 255, 0.85);
+  --bg:            #ffffff;
+  --border:        rgba(30, 64, 124, 0.16);
+  --border-2:      rgba(30, 64, 124, 0.28);
+  --text:          #0f1f3d;
+  --text-mid:      #41577d;
+  --text-light:    #76889f;
+}

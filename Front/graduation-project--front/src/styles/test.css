@@ -1,0 +1,72 @@
+/* Test menu — EduPick Midnight */
+
+.test-page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 24px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.test-hero {
+  text-align: center;
+  margin-bottom: 36px;
+  animation: ep-fade-up 0.5s var(--ep-ease) both;
+}
+.test-hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+  background: var(--ep-grad-text);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.test-hero p { color: var(--ep-text-mid); font-size: 1rem; }
+.test-hero strong { color: var(--ep-glow); }
+
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.test-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+  background: var(--ep-glass-2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-radius-lg);
+  padding: 26px 24px;
+  cursor: pointer;
+  transition: transform 0.3s var(--ep-ease), border-color 0.3s, box-shadow 0.3s;
+}
+.test-card:hover { transform: translateY(-6px); border-color: var(--ep-border-2); box-shadow: var(--ep-glow-sky); }
+
+.test-card--primary {
+  background: linear-gradient(135deg, rgba(47,111,237,0.18), rgba(93,168,245,0.06));
+  border-color: var(--ep-border-2);
+}
+
+.test-card-icon {
+  width: 50px; height: 50px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 14px;
+  background: rgba(47,111,237,0.18);
+  border: 1px solid var(--ep-border-2);
+  color: var(--ep-sky);
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+.test-card h3 { font-size: 1.1rem; }
+.test-card p { font-size: 0.9rem; color: var(--ep-text-mid); line-height: 1.6; flex: 1; }
+.test-card-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--ep-glow); font-weight: 600; font-size: 0.9rem;
+  transition: gap 0.2s var(--ep-ease);
+}
+.test-card:hover .test-card-cta { gap: 12px; }
+
+@media (max-width: 860px) { .test-grid { grid-template-columns: 1fr; } }
