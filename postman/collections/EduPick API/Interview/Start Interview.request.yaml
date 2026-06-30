@@ -1,0 +1,15 @@
+$kind: http-request
+name: Start Interview
+method: POST
+url: '{{baseUrl}}/interview/start'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "{{userEmail}}",
+      "user_name": "John Doe"
+    }

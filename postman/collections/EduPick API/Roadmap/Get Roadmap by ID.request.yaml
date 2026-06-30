@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Roadmap by ID
+method: GET
+url: '{{baseUrl}}/roadmap/get?roadmap_id={{roadmapId}}&email={{userEmail}}'
+order: 6000

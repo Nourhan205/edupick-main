@@ -1,0 +1,16 @@
+$kind: http-request
+name: Generate Topic Quiz
+method: POST
+url: '{{baseUrl}}/topic-quiz/generate'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "topic": "Python basics",
+      "count": 10,
+      "lang": "en"
+    }

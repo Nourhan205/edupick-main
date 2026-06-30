@@ -1,0 +1,21 @@
+$kind: http-request
+name: Save Topic Quiz Result
+method: POST
+url: '{{baseUrl}}/topic-quiz/save'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "{{userEmail}}",
+      "topic": "Python basics",
+      "score": 8,
+      "total": 10,
+      "lang": "en",
+      "name": "Python Basics Quiz",
+      "source": "topic",
+      "track": "Web Development"
+    }

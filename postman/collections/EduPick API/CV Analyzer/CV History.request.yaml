@@ -1,0 +1,5 @@
+$kind: http-request
+name: CV History
+method: GET
+url: '{{baseUrl}}/cv/history?email={{userEmail}}'
+order: 2000

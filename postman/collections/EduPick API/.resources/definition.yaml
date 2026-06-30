@@ -1,0 +1,7 @@
+$kind: collection
+name: EduPick API
+description: 'API collection for the EduPick educational platform. Base URL: {{baseUrl}}'
+variables:
+  - key: baseUrl
+    value: 'http://localhost:5000'
+    description: Base URL for the EduPick API

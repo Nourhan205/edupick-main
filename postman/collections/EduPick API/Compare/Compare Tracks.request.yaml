@@ -1,0 +1,19 @@
+$kind: http-request
+name: Compare Tracks
+method: POST
+url: '{{baseUrl}}/compare'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "tracks": "Web Development, Data Science",
+      "lang": "en",
+      "location": "Global",
+      "currency": "USD",
+      "year": "2026",
+      "criteria": "1,2,3,4,5,6,7"
+    }

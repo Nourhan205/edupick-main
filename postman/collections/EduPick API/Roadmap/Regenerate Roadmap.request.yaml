@@ -1,0 +1,16 @@
+$kind: http-request
+name: Regenerate Roadmap
+method: POST
+url: '{{baseUrl}}/roadmap/regenerate'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "track": "Web Development",
+      "level": "beginner",
+      "goal": "Get a junior developer job"
+    }

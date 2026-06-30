@@ -1,0 +1,5 @@
+$kind: http-request
+name: Dashboard
+method: GET
+url: '{{baseUrl}}/dashboard?email={{userEmail}}'
+order: 1000

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Topic Quiz Results
+method: GET
+url: '{{baseUrl}}/topic-quiz/results?email={{userEmail}}'
+order: 5000

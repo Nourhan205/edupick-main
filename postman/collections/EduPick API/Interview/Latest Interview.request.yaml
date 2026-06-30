@@ -1,0 +1,5 @@
+$kind: http-request
+name: Latest Interview
+method: GET
+url: '{{baseUrl}}/interview/latest?email={{userEmail}}'
+order: 4000

@@ -1,0 +1,15 @@
+$kind: http-request
+name: Refresh Roadmap
+method: POST
+url: '{{baseUrl}}/roadmap/refresh'
+order: 8000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "{{userEmail}}",
+      "roadmap_id": "{{roadmapId}}"
+    }

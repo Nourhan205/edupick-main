@@ -1,0 +1,17 @@
+$kind: http-request
+name: Regenerate with Note
+method: POST
+url: '{{baseUrl}}/roadmap/regenerate-with-note'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "track": "Web Development",
+      "level": "beginner",
+      "goal": "Get a junior developer job",
+      "note": "Focus more on React and less on vanilla JS"
+    }

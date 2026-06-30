@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get User Roadmaps
+method: GET
+url: '{{baseUrl}}/roadmap/user?email={{userEmail}}'
+order: 5000

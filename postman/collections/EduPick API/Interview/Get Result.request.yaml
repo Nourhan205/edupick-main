@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Result
+method: GET
+url: '{{baseUrl}}/interview/result/{{sessionId}}'
+order: 3000

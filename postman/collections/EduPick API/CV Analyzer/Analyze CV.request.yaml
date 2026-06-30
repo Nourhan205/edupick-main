@@ -1,0 +1,14 @@
+$kind: http-request
+name: Analyze CV
+method: POST
+url: '{{baseUrl}}/cv/analyze'
+order: 1000
+body:
+  type: formdata
+  content:
+    - key: job_title
+      type: text
+      value: Software Engineer
+    - key: email
+      type: text
+      value: '{{userEmail}}'
