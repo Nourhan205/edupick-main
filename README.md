@@ -41,10 +41,6 @@ npm run dev                                        # http://localhost:5173
 React (Vite) · Flask · MongoDB · ChromaDB (RAG) · CrewAI · LangChain ·
 Groq / OpenRouter / Gemini LLMs.
 
-## Deploy
-See **[DEPLOYMENT.md](DEPLOYMENT.md)** — free stack: Vercel (frontend) +
-Hugging Face Spaces (backend) + MongoDB Atlas (database).
-
 ## Features
 Discovery interview · AI roadmaps · topic & career quizzes · career comparison ·
 AI assistant (+ floating widget) · personalized dashboard · profile · light/dark themes.
